@@ -421,13 +421,7 @@ export default function Home() {
             className="bg-white p-8 rounded-2xl shadow-md border border-gray-100"
           >
             <div className="flex items-center mb-4">
-              <Image
-                src="/services-icon.png"
-                alt="Our Services"
-                width={40}
-                height={40}
-                className="mr-3"
-              />
+             
               <h3
                 className={`${cinzel.className} text-xl text-blue-900 font-semibold`}
               >
@@ -455,13 +449,7 @@ export default function Home() {
             className="bg-white p-8 rounded-2xl shadow-md border border-gray-100"
           >
             <div className="flex items-center mb-4">
-              <Image
-                src="/tech-icon.png"
-                alt="Technology and Materials"
-                width={40}
-                height={40}
-                className="mr-3"
-              />
+             
               <h3
                 className={`${cinzel.className} text-xl text-blue-900 font-semibold`}
               >
