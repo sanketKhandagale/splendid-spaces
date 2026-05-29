@@ -89,21 +89,16 @@ export default function Home() {
   return (
     <main className="relative text-gray-900 scroll-smooth">
       {/* ================= HEADER ================= */}
-      <header
-        className="flex justify-between items-center fixed top-0 left-0 w-full z-50 shadow-md"
-        style={{
-          backgroundImage: "url('/header-bg.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "90px",
-          padding: "20px 60px",
-        }}
-      >
-{/* 🔸 Left: Logo + Title */}
-<div className="flex items-center">
-  
-  {/* Fixed logo container */}
-  <div style={{ width: "100px" }}>
+ <header
+  className="fixed top-0 left-0 w-full z-50 shadow-md flex items-center justify-between px-4 md:px-12 h-20 md:h-[90px]"
+  style={{
+    backgroundImage: "url('/header-bg.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
+  {/* Left: Logo + Title */}
+  <div className="flex items-center gap-2 md:gap-4">
     <Image
       src="/logo (11).png"
       alt="Splendid Spaces Logo"
@@ -111,73 +106,74 @@ export default function Home() {
       height={70}
       quality={100}
       priority
-      className="rounded-full"
+      className="rounded-full w-12 h-12 md:w-[70px] md:h-[70px]"
     />
+
+    <h1
+      className={`${cinzel.className} text-white font-bold text-lg md:text-[35px]`}
+      style={{
+        letterSpacing: "0.05em",
+      }}
+    >
+      Splendid <span className="text-yellow-400">Spaces</span>
+    </h1>
   </div>
 
-  {/* Text stays stable */}
-  <h1
-    className={`${cinzel.className} text-white font-bold`}
-    style={{
-      fontSize: "35px",
-      letterSpacing: "0.05em",
-    }}
-  >
-    Splendid <span className="text-yellow-400">Spaces</span>
-  </h1>
+  {/* Right Side */}
+  <div className="flex items-center gap-4 md:gap-10">
 
-</div>
+    {/* Calculate Budget */}
+    <motion.button
+      onClick={() => router.push("/calculate-budget")}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="bg-yellow-500 text-white hover:text-blue-900 font-semibold rounded-full shadow-md transition
+                 px-4 py-2 text-sm
+                 md:px-8 md:py-3 md:text-lg"
+    >
+      Calculate Budget
+    </motion.button>
 
-        {/* 🔸 Right: Navigation */}
-        <nav
-          className="flex"
-          style={{
-            gap: "45px",
-            fontSize: "18px",
-            letterSpacing: "0.03em",
-          }}
-        >
-          
+    {/* Desktop Navigation Only */}
+    <nav
+      className="hidden md:flex"
+      style={{
+        gap: "45px",
+        fontSize: "18px",
+        letterSpacing: "0.03em",
+      }}
+    >
+      <button
+        onClick={() => scrollToSection("hero")}
+        className="text-white hover:text-yellow-400 transition font-semibold"
+      >
+        Home
+      </button>
 
-          
-          
+      <button
+        onClick={() => scrollToSection("services")}
+        className="text-white hover:text-yellow-400 transition font-semibold"
+      >
+        Services
+      </button>
 
-        
-          <motion.button
-              onClick={() => router.push("/calculate-budget")}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-yellow-500 text-white hover:text-blue-900 font-semibold py-3 px-8 rounded-full shadow-md transition mx-auto"
-            >
-              Calculate Budget
-            </motion.button>
-          <button
-            onClick={() => scrollToSection("hero")}
-            className="text-white hover:text-yellow-400 transition font-semibold"
-          >
-            Home
-          </button>
-          <button
-            onClick={() => scrollToSection("services")}
-            className="text-white hover:text-yellow-400 transition font-semibold"
-          >
-            Services
-          </button>
-          <button
-            onClick={() => scrollToSection("catalogue")}
-            className="text-white hover:text-yellow-400 transition font-semibold"
-          >
-            Catalogue
-          </button>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="text-white hover:text-yellow-400 transition font-semibold"
-          >
-            Get in Touch
-          </button>
-          
-        </nav>
-      </header>
+      <button
+        onClick={() => scrollToSection("catalogue")}
+        className="text-white hover:text-yellow-400 transition font-semibold"
+      >
+        Catalogue
+      </button>
+
+      <button
+        onClick={() => scrollToSection("contact")}
+        className="text-white hover:text-yellow-400 transition font-semibold"
+      >
+        Get in Touch
+      </button>
+    </nav>
+
+  </div>
+</header>
 
       {/* ================= HERO SECTION ================= */}
       <section
